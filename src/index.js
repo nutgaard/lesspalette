@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react-lite';
+import ReactDOM from 'react-lite';
 import Palette from "./palette";
 
 function App() {

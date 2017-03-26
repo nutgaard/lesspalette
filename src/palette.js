@@ -183,7 +183,7 @@ function combine(l1, l2) {
         .map((v1) => l2.map((v2) => Array.isArray(v2) ? [v1, ...v2] : [v1,v2]))
         .reduce((a, l) => [...a, ...l], []);
 }
-function range(start, end, skip, inclusive: false) {
+function range(start, end, skip, inclusive = false) {
     return new Array(((end-start) / skip) + (inclusive ? 1 : 0))
         .fill(0)
         .map((_, i) => i * skip);
@@ -195,8 +195,6 @@ function generate() {
     return combine(rgb, combine(rgb, rgb)).map(([r, g, b], i) => ({ [`var${i}`]: `rgb(${r}, ${g}, ${b})` }))
         .reduce((acc, obj) => ({...acc, ...obj}), {});
 }
-
-console.log('generate();', generate());
 
 class Palette extends PureComponent {
     constructor(props) {
@@ -226,7 +224,5 @@ class Palette extends PureComponent {
         );
     }
 }
-
-Palette.propTypes = {};
 
 export default Palette;
