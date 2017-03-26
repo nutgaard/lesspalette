@@ -1,5 +1,5 @@
-import React from 'react-lite';
-import ReactDOM from 'react-lite';
+/** @jsx preact.h */
+import preact from 'preact';
 import Palette from "./palette";
 
 function App() {
@@ -11,4 +11,4 @@ function App() {
     );
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+preact.render(<App />, document.getElementById('root'));

@@ -1,4 +1,5 @@
-import React, {PureComponent} from "react-lite";
+/** @jsx preact.h */
+import preact, {h, Component} from 'preact';
 import lessvars from "lessvars";
 import convert from "color-convert";
 import colornames from "color-name";
@@ -196,7 +197,7 @@ function generate() {
         .reduce((acc, obj) => ({...acc, ...obj}), {});
 }
 
-class Palette extends PureComponent {
+class Palette extends Component {
     constructor(props) {
         super(props);
 
