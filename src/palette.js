@@ -1,4 +1,4 @@
-import React, {PureComponent} from "react";
+import React, {PureComponent} from "react-lite";
 import lessvars from "lessvars";
 import convert from "color-convert";
 import colornames from "color-name";
