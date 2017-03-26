@@ -162,11 +162,7 @@ function PaletteElement([name, color]) {
                     <span className="palette__metaentry-value">@{name}</span>
                 </div>
                 <div className="palette__metaentry">
-                    <span className="palette__metaentry-header">Value</span>
-                    <span className="palette__metaentry-value">{color}</span>
-                </div>
-                <div className="palette__metaentry">
-                    <span className="palette__metaentry-header">Hex</span>
+                    <span className="palette__metaentry-header">HEX</span>
                     <span className="palette__metaentry-value">{ColorUtils.convert('hex', color)}</span>
                 </div>
                 <div className="palette__metaentry">
@@ -198,13 +194,6 @@ function generate() {
 
     return combine(rgb, combine(rgb, rgb)).map(([r, g, b], i) => ({ [`var${i}`]: `rgb(${r}, ${g}, ${b})` }))
         .reduce((acc, obj) => ({...acc, ...obj}), {});
-
-    // const sl = [0, 20, 40, 60, 80];
-    // const h = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360];
-
-    // return combine(h, combine(sl, sl))
-    //     .map(([h, s, l], i) => ({ [`var${i}`]: `hsl(${h}, ${s}%, ${l}%)` }))
-    //     .reduce((acc, obj) => ({...acc, ...obj}), {});
 }
 
 console.log('generate();', generate());

@@ -1,3 +1,5 @@
+const isBuild = process.argv[2] === 'build';
+
 const { FuseBox, CSSPlugin, SassPlugin, RawPlugin, BabelPlugin } = require("fuse-box");
 
 
@@ -13,4 +15,8 @@ let fuse = new FuseBox({
     ]
 });
 
-fuse.devServer(">index.js");
+if (isBuild) {
+    fuse.bundle(">index.js");
+} else {
+    fuse.devServer(">index.js");
+}
