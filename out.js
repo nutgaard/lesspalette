@@ -404,21 +404,7 @@ function PaletteElement(_ref9) {
                 _react2.default.createElement(
                     "span",
                     { className: "palette__metaentry-header" },
-                    "Value"
-                ),
-                _react2.default.createElement(
-                    "span",
-                    { className: "palette__metaentry-value" },
-                    color
-                )
-            ),
-            _react2.default.createElement(
-                "div",
-                { className: "palette__metaentry" },
-                _react2.default.createElement(
-                    "span",
-                    { className: "palette__metaentry-header" },
-                    "Hex"
+                    "HEX"
                 ),
                 _react2.default.createElement(
                     "span",
@@ -486,13 +472,6 @@ function generate() {
     }).reduce(function (acc, obj) {
         return _extends({}, acc, obj);
     }, {});
-
-    // const sl = [0, 20, 40, 60, 80];
-    // const h = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360];
-
-    // return combine(h, combine(sl, sl))
-    //     .map(([h, s, l], i) => ({ [`var${i}`]: `hsl(${h}, ${s}%, ${l}%)` }))
-    //     .reduce((acc, obj) => ({...acc, ...obj}), {});
 }
 
 console.log('generate();', generate());
